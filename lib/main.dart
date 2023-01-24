@@ -4,35 +4,37 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Flutter FlatButton Example'),
-          ),
-          body: Center(
-            child: ElevatedButton(
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Icon(Icons.calendar_month),
-                  SizedBox(width: 15),
-                  Text("Current Date")
-                ],
-              ),
-              onPressed: () {
-                DateTime currentDateTime = DateTime.now();
-                print(currentDateTime);
-              },
-            ),
-          )),
+      title: "Huxter X Hanter",
+      home: MainHome(),
+    );
+  }
+}
+
+class MainHome extends StatefulWidget {
+  const MainHome({super.key});
+
+  @override
+  State<MainHome> createState() => _MainHomeState();
+}
+
+class _MainHomeState extends State<MainHome> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Hunter X Hunter"),
+        centerTitle: true,
+        backgroundColor: Colors.red,
+      ),
+      body: const Center(
+        child: Text("Yahalo"),
+      ),
     );
   }
 }
